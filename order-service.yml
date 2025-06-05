@@ -21,4 +21,13 @@ eureka:
       defaultZone: http://localhost:8761/eureka
   instance:
     ip-address: true
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      product-service:
+        slidingWindowSize: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+
     
