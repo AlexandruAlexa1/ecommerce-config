@@ -12,22 +12,33 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-  instance:
-    ip-address: true
-
+    
 resilience4j:
   circuitbreaker:
     instances:
       product-service:
-        slidingWindowSize: 5
-        failureRateThreshold: 50
-        waitDurationInOpenState: 10s
-
-    
+        slidingWindowSize: 5 # Number of calls used to calculate the failure rate
+        failureRateThreshold: 50 # Circuit opens if 50% of the last calls failed
+        waitDurationInOpenState: 10s # Time the circuit stays open before switching to half-open
+        
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+        
+    circuitbreaker:
+      resilience4j:
+        enabled: true
+        
+    stream:
+      default-binder: rabbit
+      bindings:
+        order-out-0:
+          destination: orders
+          content-type: application/json
+          
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: ${rabbitmq.username}
+    password: ${rabbitmq.password}

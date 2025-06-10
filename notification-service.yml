@@ -12,13 +12,18 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-    
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-  instance:
-    ip-address: true
-    
+      
+  cloud:
+    stream:
+      bindings:
+        notification-in-0:
+          destination: orders
+          group: notification-group
+          content-type: application/json
+      default-binder: rabbit
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: ${rabbitmq.username}
+    password: ${rabbitmq.password}
