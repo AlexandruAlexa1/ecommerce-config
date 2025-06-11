@@ -13,3 +13,6 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: true
+
+custom:
+  message: "Welcome to the Product Service"

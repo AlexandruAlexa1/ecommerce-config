@@ -42,3 +42,6 @@ resilience4j:
     port: 5672
     username: ${rabbitmq.username}
     password: ${rabbitmq.password}
+
+custom:
+  message: "Welcome to the Order Service"
