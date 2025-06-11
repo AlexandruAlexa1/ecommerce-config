@@ -15,8 +15,4 @@ spring:
     show-sql: true
 
 custom:
-<<<<<<< HEAD
-  message: "Welcome to the Product Service"
-=======
-  message: "Welcome to the"
->>>>>>> 14ccb9f03dcee40ce018f7c31593a70099c53c90
+  message: "Welcome to the Product Service!"
