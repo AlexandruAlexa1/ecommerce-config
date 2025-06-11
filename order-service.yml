@@ -44,4 +44,8 @@ resilience4j:
     password: ${rabbitmq.password}
 
 custom:
+<<<<<<< HEAD
   message: "Welcome to the Order Service"
+=======
+  message: "Welcome to the"
+>>>>>>> 14ccb9f03dcee40ce018f7c31593a70099c53c90
