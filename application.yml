@@ -3,7 +3,7 @@ eureka:
     register-with-eureka: true         # This service registers itself with the Eureka server
     fetch-registry: true               # This service fetches the list of other services from Eureka
     service-url:
-      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka} # The Eureka server URL
+      defaultZone: ${EUREKA_URL:http://discovery-server:8761/eureka} # The Eureka server URL
 
   instance:
     prefer-ip-address: true            # Use the IP address instead of hostname when registering
@@ -11,7 +11,7 @@ eureka:
 management:
   zipkin:
     tracing:
-      endpoint: ${ZIPKIN_URL:http://localhost:9411/api/v2/spans}  # Zipkin collector endpoint
+      endpoint: ${ZIPKIN_URL:http://zipkin:9411/api/v2/spans}  # Zipkin collector endpoint
 
   tracing:
     sampling:
