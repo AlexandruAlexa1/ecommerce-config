@@ -51,7 +51,7 @@ eureka:
     register-with-eureka: true         # This service registers itself with the Eureka server
     fetch-registry: true               # This service fetches the list of other services from Eureka
     service-url:
-      defaultZone: http://localhost:8761/eureka # The Eureka server URL
+      defaultZone: http://discovery-server:8761/eureka # The Eureka server URL
 
   instance:
     prefer-ip-address: true            # Use the IP address instead of hostname when registering
