@@ -38,7 +38,7 @@ resilience4j:
           content-type: application/json
           
   rabbitmq:
-    host: ${RABBITMQ_HOST:localhost}
+    host: ${RABBITMQ_HOST}
     port: ${RABBITMQ_PORT:5672}
     username: ${rabbitmq.username:guest}
     password: ${rabbitmq.password:guest}
