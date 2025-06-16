@@ -37,11 +37,5 @@ resilience4j:
           destination: orders
           content-type: application/json
           
-  rabbitmq:
-    host: ${RABBITMQ_HOST}
-    port: ${RABBITMQ_PORT:5672}
-    username: ${rabbitmq.username:guest}
-    password: ${rabbitmq.password:guest}
-
 custom:
   message: "Welcome to the Order Service!"

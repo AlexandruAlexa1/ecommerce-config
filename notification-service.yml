@@ -21,12 +21,6 @@ spring:
           group: notification-group
           content-type: application/json
       default-binder: rabbit
-
-  rabbitmq:
-    host: ${RABBITMQ_HOST:localhost}
-    port: ${RABBITMQ_PORT:5672}
-    username: ${rabbitmq.username:guest}
-    password: ${rabbitmq.password:guest}
-
+      
 custom:
   message: "Welcome to the Notification Service!"
