@@ -20,6 +20,8 @@ spring:
           destination: orders
           group: notification-group
           content-type: application/json
+          consumer:
+            auto-startup: true
       default-binder: rabbit
       
 custom:
